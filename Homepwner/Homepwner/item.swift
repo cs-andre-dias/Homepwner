@@ -29,10 +29,21 @@ class item: NSObject{
             let adjectives = ["Fluffy", "Rusty", "Shiny"]
             let nouns = ["Bear", "Spork", "Mac"]
             
+            var idx =  arc4random_uniform(UInt32(adjectives.count))
+            let randomAdjectives = adjectives[Int(idx)]
             
+            idx = arc4random_uniform(UInt32(nouns.count))
+            let randomNouns = nouns[Int(idx)]
+            
+            let randomName = "\(randomAdjectives), \(randomNouns)"
+            let randomValue = Int(arc4random_uniform(100))
+            
+            let randomSerialNumber = NSUUID().uuidString.components(separatedBy: "-").first!
+            
+            self.init(name: randomName, serialNumber: randomSerialNumber, valueInDollars: randomValue)
             
         }else{
-            
+            self.init(name: "", serialNumber: nil, valueInDollars: 0)
         }
     }
 }
