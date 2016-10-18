@@ -35,7 +35,7 @@ class Item: NSObject{
             idx = arc4random_uniform(UInt32(nouns.count))
             let randomNouns = nouns[Int(idx)]
             
-            let randomName = "\(randomAdjectives), \(randomNouns)"
+            let randomName = "\(randomAdjectives) \(randomNouns)"
             let randomValue = Int(arc4random_uniform(100))
             
             let randomSerialNumber = NSUUID().uuidString.components(separatedBy: "-").first!
