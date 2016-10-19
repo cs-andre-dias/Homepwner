@@ -47,7 +47,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bl9-1W-aIk" id="mTb-KD-o8n">
-                                    <frame key="frameInset" width="375" height="64"/>
+                                    <frame key="frameInset" width="375" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMq-c1-Frp">
@@ -80,6 +80,7 @@
                                     <outlet property="nameLabel" destination="Bce-fG-dd9" id="kVJ-Zu-74Z"/>
                                     <outlet property="serialNumberLabel" destination="wMq-c1-Frp" id="sim-ka-kWX"/>
                                     <outlet property="valueLabel" destination="tb6-cx-fzi" id="NUc-tB-C6c"/>
+                                    <segue destination="qG0-PT-OJI" kind="show" identifier="showItem" id="8z6-Mg-b45"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="379" y="69"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="OhC-Qh-T9M">
             <objects>
-                <viewController id="qG0-PT-OJI" sceneMemberID="viewController">
+                <viewController id="qG0-PT-OJI" customClass="DetailViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NEW-jf-mSc"/>
                         <viewControllerLayoutGuide type="bottom" id="LmP-L5-H62"/>
@@ -169,6 +170,12 @@
                             <constraint firstItem="AuG-XR-cG7" firstAttribute="leading" secondItem="fla-jX-mao" secondAttribute="leading" constant="8" id="oAN-pf-oap"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dataLabel" destination="SQ2-IS-zuw" id="b1a-jY-gNR"/>
+                        <outlet property="nameField" destination="5E7-QR-0JD" id="J8m-kr-27L"/>
+                        <outlet property="serialNumberField" destination="Llk-G2-NzE" id="Lw1-6T-j10"/>
+                        <outlet property="valueField" destination="dfp-gj-BNS" id="VfP-jL-glr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7G9-5m-FsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
