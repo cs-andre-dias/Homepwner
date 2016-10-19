@@ -44,12 +44,15 @@ class itemsViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        
+        cell.updateLabels()
         
         let item = itemStore.allItems[indexPath.row]
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$ \(item.valueInDollars)"
+        cell.nameLabel.text = item.name
+        cell.serialNumberLabel.text = item.serialNumber
+        cell.valueLabel.text = "$\(item.valueInDollars)"
         
         return cell
     }
@@ -68,7 +71,7 @@ class itemsViewController: UITableViewController{
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             ac.addAction(cancelAction)
             
-            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
+            let deleteAction = UIAlertAction(title: "Remove", style: .destructive, handler: { (action) -> Void in
                 self.itemStore.removeItem(item: item)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 
@@ -97,5 +100,7 @@ class itemsViewController: UITableViewController{
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
     }
 }
