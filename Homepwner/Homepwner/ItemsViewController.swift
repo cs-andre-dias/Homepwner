@@ -27,17 +27,6 @@ class itemsViewController: UITableViewController{
         
     }
     
-    @IBAction func toggleEditingMode(sender: AnyObject){
-            if isEditing {
-                sender.setTitle("Edit", for: .normal)
-            
-                setEditing(false, animated: true)
-            }else{
-                sender.setTitle("Done", for: .normal)
-            
-                setEditing(true, animated: true)
-            }
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
@@ -111,14 +100,13 @@ class itemsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 }
