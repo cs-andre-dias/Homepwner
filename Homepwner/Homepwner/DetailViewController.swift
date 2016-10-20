@@ -17,8 +17,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var valueField: UITextField!
    
     @IBOutlet var dataLabel: UILabel!
+
     
     var item: Item!
+    
+    @IBAction func backgroundTapped(_ sender: AnyObject) {
+        view.endEditing(true)
+    }
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -48,6 +53,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        view.endEditing(true)
+        
         item.name = nameField.text ?? ""
         item.serialNumber = serialNumberField.text
         
@@ -65,4 +72,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+
+    
+    
 }
