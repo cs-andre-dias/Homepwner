@@ -19,7 +19,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var dataLabel: UILabel!
 
     
-    var item: Item!
+    var item: Item! {
+        didSet {
+             navigationItem.title = item.name
+        }
+    }
     
     @IBAction func backgroundTapped(_ sender: AnyObject) {
         view.endEditing(true)
@@ -73,6 +77,4 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    
-    
 }

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Items View Controller-->
+        <!--Homepwner-->
         <scene sceneID="kPM-Fq-l4y">
             <objects>
                 <tableViewController id="OcP-ke-hFk" customClass="itemsViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,7 +89,7 @@
                             <outlet property="delegate" destination="OcP-ke-hFk" id="t09-rx-KP7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="UE8-SL-SUN"/>
+                    <navigationItem key="navigationItem" title="Homepwner" id="UE8-SL-SUN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eo-sc-CtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
