@@ -89,7 +89,13 @@
                             <outlet property="delegate" destination="OcP-ke-hFk" id="t09-rx-KP7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Homepwner" id="UE8-SL-SUN"/>
+                    <navigationItem key="navigationItem" title="Homepwner" id="UE8-SL-SUN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3SG-LG-aeL">
+                            <connections>
+                                <action selector="addNewItemWithSender:" destination="OcP-ke-hFk" id="1Px-hU-HfW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eo-sc-CtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
