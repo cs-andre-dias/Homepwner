@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var nameField: UITextField!
     
@@ -43,5 +43,26 @@ class DetailViewController: UIViewController {
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         dataLabel.text = dateFormatter.string(from: item.dateCreated as Date)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        item.name = nameField.text ?? ""
+        item.serialNumber = serialNumberField.text
+        
+        if let valueText = valueField.text{
+            if let value = numberFormatter.number(from: valueText){
+                item.valueInDollars = value.intValue
+            }
+        }else{
+            item.valueInDollars = 0
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OcP-ke-hFk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G0N-gV-FWF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="5S4-So-VVu">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                            <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAc-G2-qcP">
@@ -44,7 +44,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="65" id="bl9-1W-aIk" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="152" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bl9-1W-aIk" id="mTb-KD-o8n">
                                     <frame key="frameInset" width="375" height="64.5"/>
@@ -89,10 +89,11 @@
                             <outlet property="delegate" destination="OcP-ke-hFk" id="t09-rx-KP7"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="UE8-SL-SUN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eo-sc-CtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379" y="69"/>
+            <point key="canvasLocation" x="1317.5999999999999" y="68.815592203898049"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="OhC-Qh-T9M">
@@ -119,6 +120,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="qG0-PT-OJI" id="5xb-t0-lkS"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -133,6 +137,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="qG0-PT-OJI" id="oQj-Ra-TzF"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -147,6 +154,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="qG0-PT-OJI" id="GOo-zc-UHO"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -164,7 +174,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AuG-XR-cG7" firstAttribute="top" secondItem="fla-jX-mao" secondAttribute="top" constant="8" id="FiV-tN-kuz"/>
+                            <constraint firstItem="AuG-XR-cG7" firstAttribute="top" secondItem="fla-jX-mao" secondAttribute="top" constant="75" id="FiV-tN-kuz"/>
                             <constraint firstAttribute="trailing" secondItem="AuG-XR-cG7" secondAttribute="trailing" constant="8" id="hYf-ct-X1k"/>
                             <constraint firstItem="LmP-L5-H62" firstAttribute="top" secondItem="AuG-XR-cG7" secondAttribute="bottom" constant="8" id="ihI-GZ-moF"/>
                             <constraint firstItem="AuG-XR-cG7" firstAttribute="leading" secondItem="fla-jX-mao" secondAttribute="leading" constant="8" id="oAN-pf-oap"/>
@@ -179,7 +189,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7G9-5m-FsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1337" y="69"/>
+            <point key="canvasLocation" x="2276" y="68.815592203898049"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uyJ-eC-hYp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G0N-gV-FWF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RWC-fY-jYD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OcP-ke-hFk" kind="relationship" relationship="rootViewController" id="1Ja-nc-MZX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfh-yj-edm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378.39999999999998" y="68.815592203898049"/>
         </scene>
     </scenes>
 </document>
