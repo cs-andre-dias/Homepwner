@@ -149,6 +149,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="tyv-cV-0sd"/>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBx-Wg-N2F">
+                                        <items>
+                                            <barButtonItem systemItem="camera" id="g5c-vL-vD2">
+                                                <connections>
+                                                    <action selector="takePicture:" destination="qG0-PT-OJI" id="WE8-mx-yNO"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="5E7-QR-0JD" firstAttribute="leading" secondItem="Llk-G2-NzE" secondAttribute="leading" id="6wH-tZ-MYG"/>
@@ -170,6 +180,7 @@
                     </view>
                     <connections>
                         <outlet property="dataLabel" destination="SQ2-IS-zuw" id="b1a-jY-gNR"/>
+                        <outlet property="imageView" destination="tyv-cV-0sd" id="A4p-EQ-cFV"/>
                         <outlet property="nameField" destination="5E7-QR-0JD" id="J8m-kr-27L"/>
                         <outlet property="serialNumberField" destination="Llk-G2-NzE" id="Lw1-6T-j10"/>
                         <outlet property="valueField" destination="dfp-gj-BNS" id="VfP-jL-glr"/>
