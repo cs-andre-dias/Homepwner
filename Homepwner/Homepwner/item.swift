@@ -8,20 +8,35 @@
 
 import UIKit
 
-class Item: NSObject{
+class Item: NSObject, NSCoding{
     
     var name: String
     var valueInDollars: Int
     var serialNumber:  String?
     let dateCreated: NSDate
+    let itemKey: String
+    
     
     init(name: String, serialNumber: String?, valueInDollars: Int){
         self.name = name
         self.valueInDollars = valueInDollars
         self.serialNumber = serialNumber
         self.dateCreated = NSDate()
+        self.itemKey = NSUUID().uuidString
         
         super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: "name") as! String
+        dateCreated = aDecoder.decodeObject(forKey: "dateCreated") as! NSDate
+        itemKey = aDecoder.decodeObject(forKey: "itemKey") as! String
+        serialNumber = aDecoder.decodeObject(forKey: "serialNumber") as! String?
+        
+        valueInDollars = aDecoder.decodeInteger(forKey: "valueInDollars")
+        
+        super.init()
+        
     }
     
     convenience init(random: Bool = false){
@@ -46,4 +61,14 @@ class Item: NSObject{
             self.init(name: "", serialNumber: nil, valueInDollars: 0)
         }
     }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(dateCreated, forKey: "dateCreated")
+        aCoder.encode(itemKey, forKey: "itemKey")
+        aCoder.encode(serialNumber, forKey: "serialNumber")
+        
+        aCoder.encode(valueInDollars, forKey: "valueInDollars")
+    }
+
 }
