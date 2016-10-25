@@ -87,7 +87,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         let key = item.itemKey
         
         let imageToDisplay = imageStore.imageForKey(key: key)
-        imageView.image = imageToDisplay
+        imageView.image = imageToDisplay as! UIImage?
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -10,18 +10,18 @@ import UIKit
 
 class ImageStore: NSObject {
     
-    let cache = NSCache<NSString, UIImage>()
+    let cache: NSCache<AnyObject, AnyObject> = NSCache()
     
     func setImage(image: UIImage, forKey key: String){
-        cache.setObject(image, forKey: key as NSString)
+        cache.setObject(image, forKey: key as AnyObject)
     }
     
-    func imageForKey(key: String) -> UIImage?{
-        return cache.object(forKey: key as NSString)
+    func imageForKey(key: String) -> AnyObject?{
+        return cache.object(forKey: key as AnyObject)
     }
     
     func deleteImageForKey(key: String){
-        cache.removeObject(forKey: key as NSString)
+        cache.removeObject(forKey: key as AnyObject)
     }
 }
 
